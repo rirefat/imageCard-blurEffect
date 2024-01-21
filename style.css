@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0617;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+}
+
+.card-group {
+    display: flex;
+    gap: 25px;
+}
+
+.card {
+    border-radius: 16px;
+    width: 225px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.card .layer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card .info{
+    position: absolute;
+    bottom: -50%;
+    padding: 15px;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.info p{
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.info button{
+    color: #ffffff;
+    background: #490ccc;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.card:hover,
+.card:hover img{
+    transform: scale(1.1);
+}
+
+.card:hover > .layer{
+    opacity: 1;
+}
+
+.card:hover > .info{
+    bottom: 0;
+    opacity: 1;
+}
